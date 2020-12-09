@@ -78,11 +78,11 @@ try:
       distance = measure()
       print("  Distance : %.1f cm") % distance
       time.sleep(.1)
-      if distance < 50:
+      if distance < 80:
         print("Object detected!")
         GPIO.output(ENA, GPIO.LOW)
         GPIO.output(ENB, GPIO.LOW)
-        time.sleep(1)
+        time.sleep(2)
         print("Reversing...")
         GPIO.output(ENA, GPIO.HIGH)
         GPIO.output(ENB, GPIO.HIGH)
@@ -98,10 +98,9 @@ try:
         GPIO.output(IN2, GPIO.LOW)
         GPIO.output(IN3, GPIO.HIGH)
         GPIO.output(IN4, GPIO.LOW)
-        time.sleep(.25)
+        time.sleep(.2)
 
       else:
-        print("Resuming forward motion...")
         time.sleep(.5)
         GPIO.output(ENA, GPIO.HIGH)
         GPIO.output(ENB, GPIO.HIGH)
